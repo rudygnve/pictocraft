@@ -13,6 +13,7 @@ const create = () => {
   const [prompt, setPrompt] = useState("");
   const [loading, setLoading] = useState(false);
   const [generatedImg, setGeneratedImg] = useState("");
+  const [sharing, setSharing] = useState(false);
 
   const handleGenerate = async (e) => {
     e.preventDefault();
@@ -44,6 +45,7 @@ const create = () => {
 
   const handleShare = async (e) => {
     e.preventDefault();
+    setSharing(true);
     try {
       const response = await fetch("/api/v1/post", {
         method: "POST",
@@ -51,14 +53,17 @@ const create = () => {
         body: JSON.stringify({ name, prompt, image: generatedImg }),
       });
       const data = await response.json();
+      setSharing(false);
       toast.success("Image Shared Successfully");
       setTimeout(() => {
         router.push("/");
       }, 2000);
     } catch (err) {
+      setSharing(false);
       toast.error("Unable to submit image");
     } finally {
       setLoading(false);
+      setSharing(false);
     }
   };
 
@@ -131,11 +136,11 @@ const create = () => {
               </span>
               <button
                 onClick={handleShare}
-                disabled={generatedImg ? false : true}
+                disabled={generatedImg && !sharing ? false : true}
                 type="button"
                 className="w-full sm:w-[fit-content] py-2 px-5 bg-indigo-600 text-white text-base font-semibold rounded-lg disabled:opacity-[0.6]"
               >
-                Share with the community
+                {sharing ? "Sharing..." : "Share with the community"}
               </button>
             </div>
           </form>
