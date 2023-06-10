@@ -7,9 +7,9 @@ const Card = ({ _id, imageUrl, name, prompt }) => {
   };
 
   return (
-    <div className="group w-full h-full relative rounded-x overflow-hidden shadow-lg">
-      <img src={imageUrl} className="rounded-xl" alt={prompt} />
-      <div className="absolute bottom-1 left-1 p-2 bg-[#10131f] rounded-md right-1 hidden group-hover:flex flex-col gap-5">
+    <div className="group w-full h-full relative rounded-xl overflow-hidden shadow-lg">
+      <img src={imageUrl} className="w-full" alt={prompt} />
+      <div className="absolute bottom-2 left-2 p-2 bg-[#10131f] rounded-md right-2 hidden group-hover:flex flex-col gap-5">
         <span className="text-xs text-white font-medium">{prompt}</span>
         <div className="flex flex-row items-center justify-between">
           <div className="flex items-center gap-2">
