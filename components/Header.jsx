@@ -65,7 +65,7 @@ const Header = () => {
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
       </Helmet>
       <Navbar />
-      <div className="grow max-w-6xl mx-auto w-full py-5 sm:px-0 px-4 mb-5">
+      <div className="grow max-w-6xl mx-auto w-full py-5 px-4 mb-5">
         <div className="w-full flex flex-col gap-4">
           <h1 className="text-3xl text-slate-900 font-bold">
             Our Community Showcase
