@@ -27,7 +27,7 @@ const Header = () => {
         });
         if (response.ok) {
           const allPosts = await response.json();
-          setAllPosts(allPosts);
+          setAllPosts(allPosts.reverse());
         } else {
           alert("Not Working!");
         }
