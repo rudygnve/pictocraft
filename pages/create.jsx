@@ -77,7 +77,7 @@ const create = () => {
       </Helmet>
       <Toaster position="top-center" reverseOrder={false} />
       <Navbar />
-      <div className="grow max-w-6xl mx-auto w-full py-5 sm:px-0 px-4">
+      <div className="grow max-w-6xl mx-auto w-full py-5 px-4">
         <div className="w-full flex flex-col gap-4 mb-10">
           <h1 className="text-3xl text-slate-900 font-bold">
             Create your post
