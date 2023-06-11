@@ -13,7 +13,7 @@ const Header = () => {
 
   const RenderCards = ({ data, title }) => {
     if (data?.length > 0) {
-      return data.map((post, i) => <Card key={post?._id} {...post} />);
+      return data.slice(0,20).map((post, i) => <Card key={post?._id} {...post} />);
     }
   };
 
